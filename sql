@@ -65,6 +65,31 @@ CREATE TABLE return_status(
 --FOREIGN KEY MEMBER_ID
 ALTER  TABLE issued_status
 ADD CONSTRAINT fk_members
-FOREIGN KEY issued_member_id  
+FOREIGN KEY (issued_member_id ) 
 REFERENCES members(member_id);
+
+--FOREIGN KEY  books isbn
+ALTER  TABLE issued_status
+ADD CONSTRAINT fk_return
+FOREIGN KEY (issued_book_isbn )
+REFERENCES  books(isbn);
+
+
+--FOREIGN KEY status
+ALTER  TABLE return_status
+ADD CONSTRAINT fk_status
+FOREIGN KEY (issued_id)
+REFERENCES  issued_status(issued_id);
+
+--FOREIGN KEY branch
+ALTER  TABLE employees
+ADD CONSTRAINT fk_branch
+FOREIGN KEY (branch_id)
+REFERENCES branch (branch_id);
+
+--FOREIGN KEY emp
+ALTER  TABLE issued_status
+ADD CONSTRAINT fk_emp
+FOREIGN KEY (issued_emp_id)
+REFERENCES employees (emp_id);
 
