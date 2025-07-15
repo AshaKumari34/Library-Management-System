@@ -38,4 +38,36 @@ CREATE TABLE  books(
    publisher VARCHAR(37)
 
 );
+-- Create  members  table
+DROP TABLE IF EXISTS members;
+CREATE TABLE members(
+    member_id VARCHAR(15) primary key,
+	member_name	 VARCHAR(15),
+	member_address	 VARCHAR(15),
+	reg_date DATE
+
+);
+--Create issue-related table
+DROP TABLE IF EXISTS issued_status;
+CREATE TABLE issued_status(
+    issued_id  VARCHAR(10) PRIMARY KEY,
+	issued_member_id  VARCHAR(10),	--FK
+	issued_book_name  VARCHAR(70),
+	issued_date DATE,
+	issued_book_isbn  VARCHAR(15),--FK
+	issued_emp_id	 VARCHAR(10)--FK
+
+);
+--create table for book return
+DROP TABLE IF EXISTS return_status;
+CREATE TABLE return_status(
+     return_id	VARCHAR(10) PRIMARY KEY,
+	 issued_id	VARCHAR(10),--FK
+	 return_book_name	VARCHAR(70),
+	 return_date DATE,	
+	 return_book_isbn VARCHAR(20)	
+
+
+);
+```
 
