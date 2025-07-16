@@ -106,4 +106,5 @@ FOREIGN KEY (issued_emp_id)
 REFERENCES employees (emp_id);
 
 ```
+![data model](https://github.com/AshaKumari34/Library-Management-System/blob/main/ERD%20img.png) 
 
