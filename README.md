@@ -196,6 +196,35 @@ FROM issued_status
 # CTAS(Create Table As Select)
 **Task 6: Create Summary Tables: Used CTAS to generate new tables based on query results**- each book and total book_issued_cnt
 ```sql
+ CREATE TABLE book_count
+AS
+SELECT b.isbn,b.book_title,COUNT(i.issued_id) FROM books b
+JOIN issued_status i
+ON i.issued_book_isbn=b.isbn
+GROUP BY 1,2;
+```
+**Task 7: Retrieve all books in a specific category**
+```sql
+SELECT * FROM books
+where category ='Classic'
+```
+**Task 8:Find Total Rental Income by category**
+```sql
+SELECT b.category,SUM(rental_price),COUNT(*) FROM books b
+JOIN issued_status i
+ON i.issued_book_isbn=b.isbn
+GROUP BY 1;
+```
+**Task 9:Members who Resgistered  in the last 180 Days**
+```sql
+SELECT * FROM members
+WHERE reg_date >= CURRENT_DATE -INTERVAL '180 Days';
+```
+**Task 9:List  Employees  with thier Branch Manager's Name  and  thier branch  details:**
+
+
+
+
 
 
 
