@@ -3,7 +3,7 @@
 **Project Title**:-Library-Management-System
 # 📚 Library Management System (SQL Project for Beginners)
 
-A INtermediate-level SQL project simulating a simple Library Management System. It covers foundational concepts of relational database design, CRUD operations, and basic to intermediate querying skills.
+A first -level SQL project simulating a simple Library Management System. It covers foundational concepts of relational database design, CRUD operations, and basic to intermediate querying skills.
 
 ## 🧠 What I Learned
 - ✅ Table Creation with primary & foreign keys  
@@ -220,8 +220,15 @@ GROUP BY 1;
 SELECT * FROM members
 WHERE reg_date >= CURRENT_DATE -INTERVAL '180 Days';
 ```
-**Task 9:List  Employees  with thier Branch Manager's Name  and  thier branch  details:**
+**Task 10:Create a Table of Books with Rental Price Above a Certain Threshold:**
+```sql
+CREATE TABLE expensive_books AS
+SELECT * FROM books
+WHERE rental_price > 7.00;
+```
+# Conslustion
 
+Through this project i learn CRUD ,CTAS(CREATE TABLE AS SELECT)& DATA MODELING which  help me learning new things like how to create table to store the data of another table ,use crud operation and the best one data modeling in which i use FOREIGN KEY  for the first .
 
 
 
